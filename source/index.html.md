@@ -55,6 +55,251 @@ Setup and configuration of a API node depends on application need.
 
 # Accounts
 
+
+## Create Account
+
+```shell
+create_account cyberfund karlson "" true
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+create_account
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+creator | string |
+new_account_name | string |
+json_meta | string
+broadcast | bool |
+
+## Create Account with Keys
+
+```shell
+
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+create_account_with_keys
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+creator | string |
+new_account_name | string |
+json_meta | string |
+owner | public_key_type |
+active | public_key_type |
+posting | public_key_type |
+memo | public_key_type |
+broadcast | bool |
+
+## Update Account
+
+```shell
+
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+update_account
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+account | string |
+json_meta | string |
+owner | public_key_type |
+active | public_key_type |
+posting | public_key_type |
+memo | public_key_type |
+broadcast | bool |
+
+## Update Account Auth Account
+
+```shell
+
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+update_account_auth_account
+
+### Query Parameters
+
+account | string |
+authority_type | type |
+auth_account | string |
+weight | weight_type |
+broadcast | bool |
+
+## Update Account Auth Key
+
+```shell
+
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+update_account_auth_key
+
+### Query Parameters
+
+account | string |
+authority_type | type |
+key | public_key_type |
+weight | weight_type |
+broadcast | bool |
+
+## Update Account Auth Threshold
+
+```shell
+
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+update_account_auth_threshold(
+
+### Query Parameters
+
+account | string |
+authority_type | type |
+threshold | uint32_t |
+broadcast | bool |
+
+## Update Account Memo Key
+
+```shell
+
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+update_account_memo_key
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+account | string |
+key | public_key_type |
+broadcast | bool |
+
+## Update Account Meta
+
+```shell
+
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+update_account_meta
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+account | string  |
+json_meta | string |
+broadcast | bool |
+
+## Follow Account
+
+```shell
+
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to follow account
+
+### Request
+
+`follow`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+follower | string |
+follower | string |
+what | set<string> |
+broadcast | bool |
+
 ## Get Account Count
 
 ```shell
@@ -114,7 +359,6 @@ get_account_history
     }]
   }]]
 }
-
 ```
 
 This endpoint return account history
@@ -178,6 +422,30 @@ Use this to get
 Parameter | Type | Description
 --------- | ------- | -----------
 account | string |
+
+## Get Account
+
+```shell
+get_account hipster
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+get_account
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ account_name | string  |
 
 ## Get Accounts
 
@@ -391,6 +659,162 @@ Use this to get
 Parameter | Type | Description
 --------- | ------- | -----------
 account | string |
+
+# Exchange
+
+## Create Order
+
+```shell
+
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+create_order
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+owner | string |
+order_id | uint32_t |
+amount_to_sell | asset |
+min_to_receive | asset |
+fill_or_kill | bool |
+expiration | uint32_t |
+broadcast | bool |
+
+## Cancel Order
+
+```shell
+cancel_order hipster 76553 true
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+cancel_order
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+owner | string |
+orderid | uint32_t |
+broadcast | bool |
+
+## Get Open Orders
+
+```shell
+get_open_orders hipster
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+get_open_orders
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+account | string |
+
+## Get Order Book
+
+```shell
+
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+get_order_book
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+limit | uint32_t |
+
+## Get Conversion Requests
+
+```shell
+get_conversion_requests hipster
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+get_conversion_requests
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ ownder | string |
+
+## Convert SBD
+
+```shell
+convert_sbd hipster 30000 true
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+convert_sbd
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+from | string |
+amount | asset |
+broadcast | bool  |
 
 # Discussions
 
@@ -765,7 +1189,192 @@ Use this to get
 
 `get_feed_history`
 
+# Messages
+
+## Sent Message
+
+```shell
+
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+send_private_message
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+from | string |
+to | string |
+subject | string |
+body | string |
+broadcast | bool |
+
+## Get Inbox
+
+```shell
+
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+get_inbox
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+account | string |
+newest | fc::time_point |
+limit | uint32_t |
+
+## Get Outbox
+
+```shell
+
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+get_outbox
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+account | string |
+newest | fc::time_point |
+limit | uint32_t |
+
 # Witness
+
+## Get Witness
+
+```shell
+
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+`get_witness`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+owner_account | string  |
+
+## Update Witness
+
+```shell
+
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+`update_witness`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+witness_name | string |
+url | string |
+block_signing_key | public_key_type |
+chain_properties & props | const |
+broadcast | bool
+
+## List Witnesses
+
+```shell
+
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+`list_witnesses`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+string & lowerbound | const |
+limit | uint32_t |
+
+## Publish Feed
+
+```shell
+
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+`publish_feed`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+witness | string |
+exchange_rate | price |
+broadcast | bool |
 
 ## Get Active Witnesses
 
@@ -871,6 +1480,30 @@ Use this to get
 ### Request
 
 `get_witnesses_by_vote`
+
+## Get Miner Queue
+
+```shell
+get_miner_queue
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+get_miner_queue
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ |  |
 
 # Escrow
 
@@ -1044,6 +1677,91 @@ Parameter | Type | Description
 --------- | ------- | -----------
  |  |
 
+# Networking
+
+## Add Nodes
+
+```shell
+network_add_nodes ???
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+`network_add_nodes`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+vector<string> & nodes | const |
+
+## Get Connected Peers
+
+```shell
+`network_get_connected_peers`
+```
+
+> The above command returns JSON structured like this:
+
+```shell
+
+```
+
+Use this to get
+
+### Request
+
+network_get_connected_peers
+
+# Account Recovery
+recover_account(string account_to_recover, authority recent_authority, authority new_authority, bool broadcast)
+request_account_recovery(string recovery_account, string account_to_recover, authority new_authority, bool broadcast)
+
+# Wallet
+save_wallet_file(string wallet_filename)
+load_wallet_file(string wallet_filename)
+lock()
+unlock(string password)
+set_password(string password)
+list_keys()
+list_my_accounts()
+list_accounts(const string & lowerbound, uint32_t limit)
+import_key(string wif_key)
+get_private_key(public_key_type pubkey)
+get_private_key_from_password(string account, string role, string password)
+
+normalize_brain_key(string s)
+suggest_brain_key()
+
+# Transactions
+post_comment(string author, string permlink, string parent_author, string parent_permlink, string title, string body, string json, bool broadcast)
+serialize_transaction(signed_transaction tx)
+set_transaction_expiration(uint32_t seconds)
+set_withdraw_vesting_route(string from, string to, uint16_t percent, bool auto_vest, bool broadcast)
+sign_transaction(signed_transaction tx, bool broadcast)
+transfer(string from, string to, asset amount, string memo, bool broadcast)
+transfer_to_vesting(string from, string to, asset amount, bool broadcast)
+get_owner_history(string account)
+get_prototype_operation(string operation_type)
+get_state(string url)
+get_transaction(transaction_id_type trx_id)
+withdraw_vesting(string from, asset vesting_shares, bool broadcast)
+prove(string challenged, bool broadcast)
+
+# Voting
+
+vote(string voter, string author, string permlink, int16_t weight, bool broadcast)
+vote_for_witness(string account_to_vote_with, string witness_to_vote_for, bool approve, bool broadcast)
+set_voting_proxy(string account_to_modify, string proxy, bool broadcast)
+
 # Libraries
 
 Listed below is the ever-growing list of steem toolkit libraries, pluggins and wrappers to make consuming steem data a breeze.
@@ -1118,3 +1836,11 @@ A simple websocket wrapper enabling RPC communication with the steem client stee
 A command-line client for posting content to Steem
 
 `https://github.com/yamadapc/steemcli`
+
+# Helpers
+
+about()
+gethelp(const string & method)
+is_locked()
+is_new()
+info()
