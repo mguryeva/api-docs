@@ -21,7 +21,7 @@ Workflow of conventional search index is straightforward: web crawler fetch a pa
 
 It would be naive to bootstrap a search engine from a scope where Google exist. We need to find a special area there general purpose search engines sucks. Variety of distributed ledgers such as blockchains and tangles can be primary content-addressable data suppliers and this is a scope where current search engines are not the best at work. Blockchains provide realtime high quality structured data which don't requires crawling. One node of any given blockchain is enough to provide verified data about transactions within on ledger without necessity to continuously revisit resources significantly reducing costs.
 
-As transactions are primary way of changing states of databased currently used by any web applications we don't exclude that distributed ledgers can be primary source of public information in 21 century.
+As transactions are primary way of changing states of databased currently used by any web applications we don't exclude that distributed ledgers and not websites can be primary source of public information in 21 century.
 
 ## No Noise Filtering
 Blockchains are highly optimized databases. Every transaction cost money so they are neutrally protected from spam and contain only data that is really matter. That reduce noise filtering to nearly zero level. Structured raw data about blocks and transaction is available for everybody. This fact also reduce resources.
