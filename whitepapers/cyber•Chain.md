@@ -89,7 +89,7 @@ What we need is to find a way to incentivize extraction from this data fog a mea
 
 Our proposed design of a search engine is based on advanced blockchain technology and enable everybody to participate and be rewarded. Everybody with account can search. To execute queries user should sign a `search` transaction with CIDv1 as payload and broadcast it.
 
-> cyberd search <CIDv1> hipster true
+> cyberd search {CIDv1} hipster true
 
 A document should be a valid CIDv1. Post headers are purposefully unique. Rationale is the following:
 - strongly encourage to bring valuable links first and get reward
@@ -118,7 +118,7 @@ It depends on developers (who primary submit answers) and (users who primary ran
 
 Information about indexed CIDv1 as well as about its rankings is available for everybody. Thus those who are interested in rewards can monitor the blockchain for semantic core updates and submit links nearly instantly. Everybody can sign `answer` transaction with a link from <search CIDv1> to <answer CIDv1> as payload and broadcast it:
 
-> answer <search CIDv1> <answer CIDv1> hipster true
+> answer {search CIDv1} {answer CIDv1} hipster true
 
 A document should be a valid CIDv1 and unique outbound link from answer. So for any given question the only unique answer is possible. Than cyber•chain verify correctness of signature and either of two things happens:
 - if CIDv1 is not in search index => Write to search index
