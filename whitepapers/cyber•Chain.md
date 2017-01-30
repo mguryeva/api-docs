@@ -162,11 +162,9 @@ Synthetic rank is take as input natural rank expressed in `rshares`. This make p
 
 Recent study [http://www.vldb.org/pvldb/vol8/p1804-ching.pdf] shows that Facebook scale pagerank computation is doable (using Java based Giraph) for 1 trillion vertices and 2 bln nodes in 600 minutes per iteration. Hence consensus computer made of commodity hardware will be able to process 1 iteration per 2 day for a 10 bln unique documents (SWAG for all blockchains + Git + Bittorent (https://arxiv.org/pdf/1009.3681.pdf) + IPFS). Our implementation is based on C++ thus can be more performant though is not guaranteed. Also we have opportunity to use the most performant CPUs available operated by witnesses and not that is being used by cloud providers. Anyway our estimation prove that it is practically enough for proof-of-concept stage. Further research in the field of parallel consensus computing is necessary to achieve Google scale (10000x more documents) realtime decentralized computation of pagerank.
 
-Our model is recursive and require enormous amount of calculations which are limited within blockchain design. Model recalculation does not happens on a periodic basis rather it continuous. We consider to introduce consensus variable in addition to blocksize.  To limit precision of our model we can define Z as threshold for recomputing any given cyber•rank. It is hard to estimate what threshold should be set as correct. But it can be defined by market forces depending on model size and available computing resources within network. Thus Z should be defined as consensus variable by delegates.
+Our model is recursive and require enormous amount of calculations which are limited within blockchain design. Model recalculation does not happens on a periodic basis rather it continuous. We consider to introduce consensus variable in addition to blocksize in order to target processing capacity of the network. Lets call it computing target of documents per block or CTD. Any witness will be able to set a number of documents the network should recompute every block. The blockchain take as input computing target of legitimate witnesses and compute CTD as daily moving average. Based on CTD blockchain can schedule range of CIDs that should be recomputed by every witness per round.
 
-Blockchains provide realtime high quality structured data which don't requires crawling. One node of any given blockchain is enough to provide verified data about transactions within on ledger without necessity to continuously revisit resources significantly reducing costs.
-
-Both algorithms have strong proof in form of Google's $550 bln capitalization in 18 years and Steem $40 mln capitalization in 9 months. Combining both we can empower the world with a new kind of search quality.
+Both algorithms have strong proof in form of Google's $550 bln capitalization in 18 years and Steem $40 mln capitalization in 9 months. Combining both it is possible to empower the world with a new kind of search quality.
 
 ## Self Indexing Dilemma
 
@@ -175,7 +173,7 @@ Proposed approach has very unexpected limitation. What if we want to index cyber
 1. Let it be. The market is a king. A bit of bloat can be a good piece of a knowledge about itself.
 2. Strictly forbid indexing of the blockchain itself. Fortunately it is not so hard to implement on a consensus level. All we need is to check that CID has not been included in a cyber•chain before. That mean that cyber•chain transaction itself remain unindexed because in order to achieve this we (1) either should mutate data for hashed and timestamped transactions, (2) nor create possibility for a self-bloat. None of the options is not valid. Again, fortunately direct search without ranking among internal cyber•chain transactions can be available inside search results with the help of CID magic.
 
-To be honest I don't know the right answer. To try or not try? Now we have solid foundation for indexing lets discuss what and how
+I'd better stick to restrictive policy.
 
 ## Challenges of Indexing Distributed Ledger
 
@@ -184,6 +182,9 @@ _Probabilistic Settlement_. ...
 _Meaning Extraction_. ...
 
 _Protocol Diversity_. ...
+
+
+Blockchains provide realtime high quality structured data which don't requires crawling. One node of any given blockchain is enough to provide verified data about transactions within on ledger without necessity to continuously revisit resources significantly reducing costs.
 
 ## Lazy Oracles
 
