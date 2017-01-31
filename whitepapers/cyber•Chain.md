@@ -253,7 +253,7 @@ Worth to note that use cases are not limited with above mentioned. Data structur
 This can be thought as server less micro javascript applications that can dynamically take as input data from the following sources:
 
 - a search query itself
-- asynchronously from another search query.
+- asynchronously from background search query
 - from a browser APIs
 - from device sensory information
 - from information about a user stored on cyber•chain
@@ -261,7 +261,7 @@ This can be thought as server less micro javascript applications that can dynami
 - from IPFS and IPNS
 - from conventional HTTPS or WebSocket APIs.
 
-Every application is CID written to search index and answer index. Before developing an application developer should target it for a specific semantic core before defining it. Semantic core and its statistic is publicity available in a blockchain. Developer shall need to develop application and submit a links to application for a targeted semantic core. Thus its up to developer to define what search queries a better fit to a particular application. Keep in mind that dynamic snippets are naturally compete for a higher position in search results. Dynamic snippets can be sorted by cyber•rank, and as result become trustful. Worth to note that developers can significantly reduce spendings on app infrastructure as dynamic snippets can be delivered through content-addresable distributed network. Proposed architecture make possible to design an application that don't require having all user's query in the index. Thus developers should not develop a snippet for every unique search request and has ability to program target semantic core. Implication of this approach is hard to overestimate. E.g. dynamic snippets combined with blockchain wallet make possible to shop right from search results.
+Every application is CID written to search index and answer index. Before developing an application developer should target it for a specific semantic core before defining it. Semantic core and its statistic is publicity available in a blockchain. Developer shall need to develop application and submit a links to application using either immutable IPFS documents or mutable IPNS pointers for a targeted semantic core. Thus its up to developer to define what search queries are better fit to a particular application. Keep in mind that dynamic snippets are naturally compete for a higher position in search results. Dynamic snippets can be sorted by cyber•rank, and as result become trustful. Worth to note that developers can significantly reduce spendings on app infrastructure as dynamic snippets can be delivered through content-addresable distributed network. Mutable IPNS pointers allow develop a snippets for a targeted semantic core and not for every unique query. Implication of this approach is hard to overestimate. E.g. dynamic snippets combined with blockchain wallet make possible to shop right from search results.
 
 The only potential problem with proposed approach is safety of third party javascript code. Sandboxed third party code is able to mitigate this risks. Web technologies such as [*web workers*](https://www.w3.org/TR/workers/) and [*web components*](https://developer.mozilla.org/en-US/docs/Web/Web_Components) are being actively developed. E.g. javascript library *jailed* [https://github.com/asvd/jailed] is able to do exactly what we need. Further adoption of web components is also one of possible solution to do that safely.
 
